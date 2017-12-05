@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import ShopItems from './ShopItems';
+import './ShoppingList.css';
 
 class ShoppingList extends React.Component{
 	constructor(props, context){

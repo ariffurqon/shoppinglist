@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import ShopItems from './ShopItems';
 
 class ShoppingList extends React.Component{
 	constructor(props, context){
@@ -46,6 +47,7 @@ class ShoppingList extends React.Component{
 						</button>
 					</form>
 				</div>
+				<ShopItems entries={this.state.items} />
 			</div>
 		);
 	}

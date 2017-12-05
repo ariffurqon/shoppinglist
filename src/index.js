@@ -7,7 +7,7 @@ var destination = document.querySelector("#container")
 
 ReactDOM.render(
 	<div>
-		<ShoppingList/>
+		<ShoppingList />
 	</div>,
 	destination
 );

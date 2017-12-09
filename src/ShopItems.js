@@ -5,10 +5,16 @@ class ShopItems extends React.Component {
 	    super(props, context);
 	 
 	    this.createTasks = this.createTasks.bind(this);
+	    this.delete = this.delete.bind(this);
 	  }
+
+	  delete(key) {
+	      this.props.delete(key);
+	    }
 	 
 	  createTasks(item) {
-	    return <li key={item.key}>{item.text}</li>
+	    return <li onClick={(e) => this.delete(item.key, e)} 
+	    				key={item.key}>{item.text}</li>
 	  }
 	 
 	  render() {

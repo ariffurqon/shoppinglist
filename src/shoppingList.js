@@ -11,7 +11,10 @@ class ShoppingList extends React.Component{
 		};
 
 		this.addItem = this.addItem.bind(this);
+		this.deleteItem = this.deleteItem.bind(this);
 	}
+
+
 
 	addItem(e) {
 	  var itemArray = this.state.items;
@@ -31,9 +34,20 @@ class ShoppingList extends React.Component{
 	    this._inputElement.value = "";
 	  }
 	 
-	  console.log(itemArray);
+	 console.log(itemArray);
 	   
-	  e.preventDefault();
+	 e.preventDefault();
+
+	}
+
+	deleteItem(key) {
+	  var filteredItems = this.state.items.filter(function (item) {
+	    return (item.key !== key);
+	  });
+	 
+	  this.setState({
+	    items: filteredItems
+	  });
 	}
 
 	render(){
@@ -48,7 +62,8 @@ class ShoppingList extends React.Component{
 						</button>
 					</form>
 				</div>
-				<ShopItems entries={this.state.items} />
+				<ShopItems entries={this.state.items}
+							delete={this.deleteItem}/>
 			</div>
 		);
 	}
